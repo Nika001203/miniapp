@@ -1,0 +1,138 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #111827;
+  background: #f3f4f6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.screen {
+  min-height: 100vh;
+  padding: 16px;
+  background: var(--tg-theme-bg-color, #f3f4f6);
+  color: var(--tg-theme-text-color, #111827);
+}
+
+.header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.header p {
+  margin: 4px 0 0;
+  color: var(--tg-theme-hint-color, #6b7280);
+}
+
+.card {
+  background: var(--tg-theme-secondary-bg-color, #ffffff);
+  border-radius: 22px;
+  padding: 18px;
+  margin-bottom: 14px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.card h1,
+.card h2,
+.card h3 {
+  margin-top: 0;
+}
+
+.muted {
+  color: var(--tg-theme-hint-color, #6b7280);
+}
+
+.buttonGrid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.button,
+.ghostButton,
+.row,
+.linkButton {
+  border: 0;
+  border-radius: 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button {
+  padding: 12px;
+  background: #eef2ff;
+}
+
+.button.active {
+  background: var(--tg-theme-button-color, #2563eb);
+  color: var(--tg-theme-button-text-color, #ffffff);
+}
+
+.ghostButton {
+  padding: 10px 12px;
+  background: #e5e7eb;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row {
+  width: 100%;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  background: #f9fafb;
+  color: inherit;
+}
+
+.bodyText {
+  white-space: pre-wrap;
+  line-height: 1.55;
+}
+
+.videoBox {
+  margin-top: 16px;
+}
+
+video,
+iframe {
+  width: 100%;
+  min-height: 220px;
+  border: 0;
+  border-radius: 18px;
+  background: #000;
+}
+
+.linkButton {
+  display: block;
+  margin-top: 16px;
+  padding: 14px;
+  text-align: center;
+  text-decoration: none;
+  background: var(--tg-theme-button-color, #2563eb);
+  color: var(--tg-theme-button-text-color, #ffffff);
+}
+
+code {
+  display: block;
+  padding: 12px;
+  border-radius: 12px;
+  background: #f3f4f6;
+  overflow-wrap: anywhere;
+}
