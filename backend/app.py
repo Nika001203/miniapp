@@ -67,11 +67,21 @@ class SheetsRepo:
             "https://www.googleapis.com/auth/spreadsheets",
             "https://www.googleapis.com/auth/drive.readonly",
         ]
+import json
 
-        creds = Credentials.from_service_account_file(
-            os.getenv("GOOGLE_APPLICATION_CREDENTIALS", "service_account.json"),
-            scopes=scopes,
-        )
+creds_json = os.getenv("GOOGLE_CREDS")
+
+if creds_json:
+    creds_dict = json.loads(creds_json)
+    creds = Credentials.from_service_account_info(creds_dict, scopes=scopes)
+else:
+    creds = Credentials.from_service_account_file(
+        os.getenv("GOOGLE_APPLICATION_CREDENTIALS", "service_account.json"),
+        scopes=scopes,
+    )
+
+
+        
         self._gc = gspread.authorize(creds)
         self._sh = self._gc.open_by_key(self.spreadsheet_id)
 
